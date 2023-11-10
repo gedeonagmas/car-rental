@@ -9,7 +9,7 @@ const mongodb = require("./config/db");
 
 app.use(
   cors({
-    origin: ["https://gedi-client.vercel.app"],
+    origin: ["https://car-rental-client-ivory.vercel.app"],
     methods: ["POST", "GET", "PATCH", "DELETE", "PUT"],
     credentials: true,
   })
