@@ -37,6 +37,7 @@ const AdminDashboard = () => {
   const { data: historyData } = useGetHistoryQuery();
   const [deleteHistoryData, historyResponse] = useDeleteHistoryMutation();
 
+  window.location.reload(true);
   useEffect(() => {
     setDashboard(true);
   }, []);
