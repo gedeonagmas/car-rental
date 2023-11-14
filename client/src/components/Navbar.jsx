@@ -200,7 +200,8 @@ function Navbar() {
                     )}{" "}
                     {user.role === "admin" && lang === "amh" && (
                       <Link
-                        onClick={()=>{openNav();window.location.reload(true)}}
+                        reloadDocument
+                        onClick={()=>{openNav()}}
                         className="navbar__buttons__sign-in"
                         to="admin"
                       >
@@ -209,6 +210,7 @@ function Navbar() {
                     )}
                     {user.role === "admin" && lang !== "amh" && (
                       <Link
+                        reloadDocument
                         onClick={openNav}
                         className="navbar__buttons__sign-in"
                         to="admin"
