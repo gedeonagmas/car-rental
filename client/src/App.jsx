@@ -18,7 +18,7 @@ import { createContext, useState } from "react";
 export const langContext = createContext();
 
 function App() {
-  const user = JSON.parse(localStorage.getItem("car-rental-user-gedeon"));
+  const user = JSON.parse(localStorage.getItem("car-rental-user-gedeon"))?.role;
   const [lang, setLang] = useState("amh");
 
   return (
@@ -34,9 +34,9 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="signup" element={<Signup />} />
           <Route path="/success" element={<Success />} />
-{/*           {user && user.role === "admin" && ( */}
+          {user && user === "admin" && (
             <Route path="/admin" element={<AdminDashboard />} />
-          // )}
+          )}
           <Route path="login" element={<Login />} />
           {/* <Route path="*" element={<PageNotFound />} /> */}
         </Routes>
