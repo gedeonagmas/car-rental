@@ -37,14 +37,11 @@ const AdminDashboard = () => {
   const { data: historyData } = useGetHistoryQuery();
   const [deleteHistoryData, historyResponse] = useDeleteHistoryMutation();
 
-  window.location.reload(true);
+  // window.location.reload(true);
   useEffect(() => {
     setDashboard(true);
   }, []);
 
-  useEffect(() => {
-   window.location.reload(true);
-  }, [dashboard]);
   //customers data
   const [customersData, setCustomersData] = useState("");
   useEffect(() => {
@@ -73,6 +70,9 @@ const AdminDashboard = () => {
   const [rentedCarsContainer, setRentedCarsContainer] = useState(false);
   const [rentalHistoryContainer, setRentalHistoryContainer] = useState(false);
 
+  useEffect(() => {
+   window.location.reload(true);
+  }, [dashboard]);
   //car form variables
   const [carPhoto, setCarPhoto] = useState("");
   const [model, setModel] = useState("");
