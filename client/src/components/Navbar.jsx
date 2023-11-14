@@ -199,14 +199,14 @@ function Navbar() {
                       </div>
                     )}{" "}
                     {user.role === "admin" && lang === "amh" && (
-                      <Link
+                      <button
                         reloadDocument
-                        onClick={()=>{openNav()}}
+                        onClick={()=>{openNav();navigate("/admin");window.location.reload(true)}}
                         className="navbar__buttons__sign-in"
-                        to="admin"
+                        
                       >
                         መቆጣጠሪያ ክፍል
-                      </Link>
+                      </button>
                     )}
                     {user.role === "admin" && lang !== "amh" && (
                       <Link
