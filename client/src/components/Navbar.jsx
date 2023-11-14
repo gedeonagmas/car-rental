@@ -200,7 +200,7 @@ function Navbar() {
                     )}{" "}
                     {user.role === "admin" && lang === "amh" && (
                       <Link
-                        onClick={openNav}
+                        onClick={()=>{openNav();window.location.reload(true)}}
                         className="navbar__buttons__sign-in"
                         to="admin"
                       >
