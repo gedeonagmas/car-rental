@@ -34,9 +34,9 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="signup" element={<Signup />} />
           <Route path="/success" element={<Success />} />
-          {user && user.role === "admin" && (
-            <Route path="admin" element={<AdminDashboard />} />
-          )}
+{/*           {user && user.role === "admin" && ( */}
+            <Route path="/admin" element={<AdminDashboard />} />
+          // )}
           <Route path="login" element={<Login />} />
           {/* <Route path="*" element={<PageNotFound />} /> */}
         </Routes>
