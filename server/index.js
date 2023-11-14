@@ -19,7 +19,7 @@ app.use(express.json());
 app.use("/user", userRouter);
 
 app.get("/", (req, res, next) => {
-  res.send("hello well come to my car-rental app");
+  res.send("hello well come to my car-rental app!");
 });
 
 mongodb()
