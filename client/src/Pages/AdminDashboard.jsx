@@ -40,6 +40,10 @@ const AdminDashboard = () => {
   useEffect(() => {
     setDashboard(true);
   }, []);
+
+  useEffect(() => {
+   window.location.reload(true);
+  }, [dashboard]);
   //customers data
   const [customersData, setCustomersData] = useState("");
   useEffect(() => {
