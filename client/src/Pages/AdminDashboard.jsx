@@ -69,10 +69,7 @@ const AdminDashboard = () => {
   const [totalCars, setTotalCars] = useState(false);
   const [rentedCarsContainer, setRentedCarsContainer] = useState(false);
   const [rentalHistoryContainer, setRentalHistoryContainer] = useState(false);
-
-  useEffect(() => {
-   window.location.reload(true);
-  }, [dashboard]);
+  
   //car form variables
   const [carPhoto, setCarPhoto] = useState("");
   const [model, setModel] = useState("");
