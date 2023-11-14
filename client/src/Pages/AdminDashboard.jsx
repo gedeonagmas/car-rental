@@ -30,6 +30,16 @@ import { useNavigate } from "react-router-dom";
 const AdminDashboard = () => {
   const navigate = useNavigate();
   //rtk query methods
+  const [reloads,setReloads]=useState(true);
+  setTimeout(()=>{
+    setReloads(false);
+  },10)
+
+   useEffect(() => {
+if(reloads){
+  window.location.reload(true);
+}
+  }, [reloads]);
   const [addCarData, carAddResponse] = useAddCarsMutation();
   const { data: getUserResponse } = useGetAllUsersQuery();
   const [freezeData, freezeResponse] = useFreezeAndActiveMutation();
