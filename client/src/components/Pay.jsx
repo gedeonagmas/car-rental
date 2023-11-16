@@ -40,12 +40,12 @@ const Pay = (props) => {
         <input
           type="hidden"
           name="callback_url"
-          value="http://localhost:4000"
+          value="https://car-rental-client-ivory.vercel.app"
         />
         <input
           type="hidden"
           name="return_url"
-          value={`http://localhost:4000/success`}
+          value={`https://car-rental-client-ivory.vercel.app/success`}
         />
         <input type="hidden" name="meta[title]" value="test" />
         <button
