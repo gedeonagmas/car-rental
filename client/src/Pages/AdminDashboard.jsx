@@ -29,7 +29,6 @@ import { useNavigate } from "react-router-dom";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
-  //rtk query methods
   
   const [addCarData, carAddResponse] = useAddCarsMutation();
   const { data: getUserResponse } = useGetAllUsersQuery();
@@ -38,7 +37,6 @@ const AdminDashboard = () => {
   const { data: historyData } = useGetHistoryQuery();
   const [deleteHistoryData, historyResponse] = useDeleteHistoryMutation();
 
-  // window.location.reload(true);
   useEffect(() => {
     setDashboard(true);
   }, []);
@@ -63,7 +61,6 @@ const AdminDashboard = () => {
     setRentalHistoryData(historyData);
   }, [historyData]);
 
-  //modal variables
   const [dashboard, setDashboard] = useState(true);
   const [customers, setCustomers] = useState(false);
   const [addCar, setAddCar] = useState(false);
@@ -71,7 +68,6 @@ const AdminDashboard = () => {
   const [rentedCarsContainer, setRentedCarsContainer] = useState(false);
   const [rentalHistoryContainer, setRentalHistoryContainer] = useState(false);
   
-  //car form variables
   const [carPhoto, setCarPhoto] = useState("");
   const [model, setModel] = useState("");
   const [mark, setMark] = useState("");
@@ -83,8 +79,7 @@ const AdminDashboard = () => {
   const [year, setYear] = useState("");
   const [pendingId, setPendingId] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
-  //add car handler
+  
   const addCarHandler = () => {
     const form = new FormData();
     form.append("carPhoto", carPhoto);
@@ -100,7 +95,6 @@ const AdminDashboard = () => {
     addCarData(form);
   };
 
-  //freeze handler
   const freezeHandler = (id, action, type) => {
     setPendingId(id);
     freezeData({
@@ -122,7 +116,6 @@ const AdminDashboard = () => {
     }
   }, [freezeResponse]);
 
-  //history response
   useEffect(() => {
     if (historyResponse.status === "rejected") {
       setErrorMessage(true);
@@ -142,7 +135,6 @@ const AdminDashboard = () => {
     });
   };
 
-  //sidebar handler
   const pathHandler = (val) => {
     setAddCar(false);
     setCustomers(false);
@@ -436,7 +428,7 @@ const AdminDashboard = () => {
                     <p className="text-3xl text-gray-500 font-extrabold py-4 px-10">
                       Last 6 Month Revenue
                     </p>
-                    <AreaChart
+{/*                     <AreaChart
                       width={600}
                       height={300}
                       data={dataCharts}
@@ -498,7 +490,7 @@ const AdminDashboard = () => {
                         fillOpacity={1}
                         fill="url(#colorPv)"
                       />
-                    </AreaChart>
+                    </AreaChart> */}
                   </div>
                 </div>
               </div>
