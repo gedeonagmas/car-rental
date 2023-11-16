@@ -41,15 +41,20 @@ const AdminDashboard = () => {
     setDashboard(true);
   }, []);
 
-  function reloadIt() {
-    if (window.location.href.substr(-2) !== "?r") {
-        window.location = window.location.href + "?r";
-    }
-}
+  (function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
 
-setTimeout(()=>{
-  reloadIt();
-}, 1000);
   //customers data
   const [customersData, setCustomersData] = useState("");
   useEffect(() => {
