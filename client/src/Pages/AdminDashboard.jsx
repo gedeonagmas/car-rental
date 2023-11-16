@@ -37,23 +37,17 @@ const AdminDashboard = () => {
   const { data: historyData } = useGetHistoryQuery();
   const [deleteHistoryData, historyResponse] = useDeleteHistoryMutation();
 
+  $(document).ready(function(){    
+    if(document.URL.indexOf("#")==-1){
+        url = document.URL+"#";
+        location = "#";
+        location.reload(true);
+    }
+});
+  
   useEffect(() => {
     setDashboard(true);
   }, []);
-
-  (function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem('firstLoad');
-  }
-})();
 
   //customers data
   const [customersData, setCustomersData] = useState("");
