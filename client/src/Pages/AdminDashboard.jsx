@@ -41,6 +41,13 @@ const AdminDashboard = () => {
     setDashboard(true);
   }, []);
 
+  function reloadIt() {
+    if (window.location.href.substr(-2) !== "?r") {
+        window.location = window.location.href + "?r";
+    }
+}
+
+setTimeout('reloadIt()', 1000)();
   //customers data
   const [customersData, setCustomersData] = useState("");
   useEffect(() => {
@@ -428,7 +435,7 @@ const AdminDashboard = () => {
                     <p className="text-3xl text-gray-500 font-extrabold py-4 px-10">
                       Last 6 Month Revenue
                     </p>
-{/*                     <AreaChart
+                    <AreaChart
                       width={600}
                       height={300}
                       data={dataCharts}
@@ -490,7 +497,7 @@ const AdminDashboard = () => {
                         fillOpacity={1}
                         fill="url(#colorPv)"
                       />
-                    </AreaChart> */}
+                    </AreaChart>
                   </div>
                 </div>
               </div>
