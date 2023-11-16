@@ -47,7 +47,9 @@ const AdminDashboard = () => {
     }
 }
 
-setTimeout('reloadIt()', 1000)();
+setTimeout(()=>{
+  reloadIt();
+}, 1000);
   //customers data
   const [customersData, setCustomersData] = useState("");
   useEffect(() => {
